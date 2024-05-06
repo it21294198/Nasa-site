@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Canvas } from '../context/Canvas'
 
 export default function Home() {
   const canvasRef = useRef(null);
@@ -6,15 +7,8 @@ export default function Home() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
-
     // Canvas API code goes here
-    context.fillStyle = 'black';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Clean up function
-    return () => {
-      // Optional: clean up code if necessary
-    };
+    Canvas(context,canvas)
   }, []);
 
   return (
