@@ -19,8 +19,8 @@ export default function Auth() {
   useEffect(() => {
 
     if(sessionStorage.getItem('token') !== null || ''){
-      // setState('test')
-      // navigate("/");
+      sessionStorage.setItem('token', '')
+      setState('')
     }
     
   }, []);
@@ -43,6 +43,7 @@ export default function Auth() {
         sessionStorage.setItem('token', response.data.access_token);
         console.log(sessionStorage.getItem('token'))
         setState(email)
+        sessionStorage.setItem('email', email)
         navigate("/");
       })
       .catch(function (error) {

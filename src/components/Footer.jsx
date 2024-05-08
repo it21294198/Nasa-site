@@ -9,7 +9,7 @@ export default function Footer() {
   <>
   <footer className="footer p-10 bg-base-300 text-base-content">
   <nav>
-  <img className="lg:w-30 lg:h-24 lg:p-4 md:w-25 md:h-20 md:p-1 relative md:mb-20 lg:mb-0" src={logo2} alt="Footer Logo"/>
+  <img className="lg:p-4 w-25 h-20 md:p-1 relative md:mb-20 lg:mb-0" src={logo2} alt="Footer Logo"/>
   </nav> 
   <nav>
     <h6 className="footer-title">Views</h6> 

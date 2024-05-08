@@ -13,18 +13,18 @@ import Error from './routes/Error.jsx';
 import Mars from './routes/Mars.jsx';
 import Pod from './routes/Pod.jsx';
 import UserProvider from './context/user_provider.jsx';
-
-const ProtectedRoute = ({ children }) => {
-  const  { state, setState }  = useContext(UserContext);
-  return state !== '' ? children : window.location.replace("/auth");
-};
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
 function App(){
+
+const ProtectedRoute = ({ children }) => {
+  let state = sessionStorage.getItem('email')
+  return state !== '' ? children : window.location.replace("/auth");
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
